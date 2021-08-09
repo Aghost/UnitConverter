@@ -3,8 +3,7 @@
 converterservice
 ILogger logger
 
-
-public stataic IConverterServeice
+public static IConverterService
 public ILogger logger;
 
 class ConverterService : IConverterService {
