@@ -26,6 +26,7 @@ namespace MeterConverter.Api.Controllers
         [HttpGet("/convert/{val}/{unit1}/{unit2}")]
         public string Details(double val, string unit1, string unit2) {
             string tmp = ParseInput($"{val} {unit1} {unit2}", LengthUnits);
+            _logger.LogInformation($"API: [{val} {unit1} {unit2}] {tmp}");
             return tmp;
         }
     }
