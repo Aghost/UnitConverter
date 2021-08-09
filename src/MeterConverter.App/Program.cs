@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using static MeterConverter.Domain.UnitConverter;
 using static System.Console;
 
-string input = "";
+string input;
 
 do {
-    WriteLine(ParseInput((input = ReadLine()), LengthUnits));
-
+    input = ReadLine();
+    WriteLine(ParseInput(input, LengthUnits));
 } while (input != "exit");
