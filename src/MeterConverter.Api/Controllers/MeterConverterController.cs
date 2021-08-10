@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using static MeterConverter.Domain.UnitConverter;
 
@@ -10,8 +6,7 @@ namespace MeterConverter.Api.Controllers
 {
     [ApiController]
     [Route("[controller]")]
-    public class MeterConverterController : ControllerBase
-    {
+    public class MeterConverterController : ControllerBase {
         private readonly ILogger<MeterConverterController> _logger;
 
         public MeterConverterController(ILogger<MeterConverterController> logger) {
@@ -24,7 +19,7 @@ namespace MeterConverter.Api.Controllers
         }
 
         [HttpGet("/convert/{val}/{unit1}/{unit2}")]
-        public string Details(double val, string unit1, string unit2) {
+        public string Convert(double val, string unit1, string unit2) {
             string tmp = ParseInput($"{val} {unit1} {unit2}", LengthUnits);
             _logger.LogInformation($"API: [{val} {unit1} {unit2}] {tmp}");
             return tmp;
