@@ -13,14 +13,9 @@ namespace MeterConverter.Api.Controllers
             _logger = logger;
         }
 
-        [HttpGet]
-        public string Get() {
-            return $"testing";
-        }
-
         [HttpGet("/convert/{val}/{unit1}/{unit2}")]
         public string Convert(double val, string unit1, string unit2) {
-            string tmp = ParseInput($"{val} {unit1} {unit2}", LengthUnits);
+            string tmp = ParseInput($"{val} {unit1} {unit2}", LengthUnits, ConvertUnit);
             _logger.LogInformation($"API: [{val} {unit1} {unit2}] {tmp}");
             return tmp;
         }
