@@ -12,11 +12,15 @@ namespace HCsharp
             Program program = new Program();
             string[] units = { "mm", "cm", "m", "dm", "km" };
 
+            await program.GetText();
+
+            /*
             for (int i = 0; i < 10; i++) {
                 foreach(string str in units) {
                     await program.GetApi(i, str);
                 }
             }
+            */
         }
 
         private async Task GetText() {
