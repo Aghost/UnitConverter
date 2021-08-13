@@ -1,4 +1,5 @@
 ﻿using System;
+using static System.Console;
 using System.Collections.Generic;
 
 namespace MeterConverter.Domain
@@ -8,10 +9,11 @@ namespace MeterConverter.Domain
 
         public Logger(string LogName) {
             this.LogName = LogName;
+            WriteLine($"{LogName} logging started!");
         }
 
         public void Log(string msg) {
-            Console.WriteLine($"{LogName}: {msg}");
+            WriteLine($"{LogName}: {msg}");
         }
     }
 }

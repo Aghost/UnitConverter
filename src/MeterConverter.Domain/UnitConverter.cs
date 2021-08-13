@@ -50,7 +50,7 @@ namespace MeterConverter.Domain
 
             if ((values.Length == 3) && Double.TryParse(values[0], out double parsed) && parsed > 0 &&
                 dict.ContainsKey(values[1]) && dict.ContainsKey(values[2])) {
-                    buffer = f(parsed, dict[values[1]], dict[values[2]]).ToString();
+                    buffer = f(dict[values[1]], dict[values[2]], parsed).ToString();
                     return true;
             }
 
