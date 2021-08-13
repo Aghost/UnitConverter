@@ -45,15 +45,17 @@ namespace MeterConverter.Domain
             return a * (val / b);
         }
 
-        public static string ParseInput(string str, Dictionary<string, double> dict, Func<double, double, double, double> f) {
-            string[] values = str.Split(' ');
+        public static bool ParseInput(string input, Dictionary<string, double> dict, Func<double, double, double, double> f, out string buffer) {
+            string[] values = input.Split(' ');
 
-            if ((values.Length == 3) && Double.TryParse(values[0], out double val) && val > 0 &&
-                    dict.ContainsKey(values[1]) &&
-                    dict.ContainsKey(values[2])) {
-                return $"{f(dict[values[1]], dict[values[2]], val)}";
+            if ((values.Length == 3) && Double.TryParse(values[0], out double parsed) && parsed > 0 &&
+                dict.ContainsKey(values[1]) && dict.ContainsKey(values[2])) {
+                    buffer = f(parsed, dict[values[1]], dict[values[2]]).ToString();
+                    return true;
             }
-            return $"Invalid Input\n> Valid Units: {String.Join(' ', dict.Keys)}";
+
+            buffer = $"Invalid Input: ({input}), [ Valid Units: {String.Join(' ', dict.Keys)} ]";
+            return false;
         }
     }
 }

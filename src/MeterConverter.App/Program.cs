@@ -1,8 +1,8 @@
 ﻿using static System.Console;
 using static MeterConverter.Domain.UnitConverter;
 
-string input;
+string stringbuffer;
 
-while ((input = ReadLine()) != "exit") {
-    WriteLine(ParseInput(input, LengthUnits, ConvertUnit));
+while ((stringbuffer = ReadLine()) != "exit") {
+    WriteLine(ParseInput(stringbuffer, LengthUnits, ConvertUnit, out stringbuffer) ? stringbuffer : stringbuffer);
 }
