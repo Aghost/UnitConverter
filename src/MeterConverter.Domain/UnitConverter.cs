@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace MeterConverter.Domain
 {
-    public class UnitConverter {
+    public static class UnitConverter {
         public static Dictionary<string, double> LengthUnits = new Dictionary<string, double> {
             { "mm", 0.001 },
             { "cm", 0.01 },

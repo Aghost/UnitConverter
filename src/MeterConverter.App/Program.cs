@@ -1,5 +1,5 @@
-﻿using static MeterConverter.Domain.UnitConverter;
-using static System.Console;
+﻿using static System.Console;
+using static MeterConverter.Domain.UnitConverter;
 
 string input;
 

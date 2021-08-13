@@ -24,7 +24,7 @@ namespace HCsharp
         }
 
         private async Task GetText() {
-            string response = await client.GetStringAsync("https://raw.githubusercontent.com/Aghost/HttpClient_cSharp/main/Program.cs");
+            string response = await client.GetStringAsync("https://raw.githubusercontent.com/Aghost/UnitConverter/main/test/HCsharp/Program.cs");
 
             Console.WriteLine(response);
         }
